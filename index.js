@@ -1,6 +1,6 @@
 const express = require('express')
 const { addAddress } = require('./controller/AddressController')
-const AddressRoute = require('../nodeApi/router/Address')
+const AddressRoute = require('./router/Address')
 const app = express()
 app.use(express.json())
 

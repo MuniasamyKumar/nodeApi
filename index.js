@@ -8,6 +8,6 @@ app.use(express.json())
 app.use('/address',AddressRoute)
 
 
-app.listen(5000,()=>{
+app.listen(3306,()=>{
     console.log(`http://localhost:5000`)
 })

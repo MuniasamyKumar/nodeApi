@@ -1,14 +1,14 @@
 const db = require('../db/db')
  const addAddress =(req,res)=>{
     try {
-        const {streetAddress,city,state,postalCode,country} = req.body
+        const {id,streetAddress,city,state,postalCode,country} = req.body
         
-        if (!streetAddress && !city && !state && !postalCode && !country) {
+        if (!id && !streetAddress && !city && !state && !postalCode && !country) {
             res.status(404).send({message:"must fill the all input ",status:false})
             return
         }
-        const query = "INSERT INTO Address (streetAddress, city, state, postalCode, country) VALUES (?,?,?,?,?)";
-        const value =[streetAddress,city,state,postalCode,country]
+        const query = "INSERT INTO Address (id,streetAddress, city, state, postalCode, country) VALUES (?,?,?,?,?,?)";
+        const value =[id,streetAddress,city,state,postalCode,country]
          db.query(query,value,(err,result)=>{
             if (err) {
 
